@@ -6,8 +6,9 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var path = require('path');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var controllerRouter =  require('./routes/controllers');
+var indexRouter      =  require('./routes/index');
+var usersRouter      =  require('./routes/users');
 
 var app = express();
 
