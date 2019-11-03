@@ -1,10 +1,10 @@
-var express =  require('express');
-var router  =  express.Router();
+const express =  require('express');
+const router  =  express.Router();
 
-var book_controller          =  require('../controllers/book_controller');
-var author_controller        =  require('../controllers/author_controller');
-var genre_controller         =  require('../controllers/genre_controller');
-var book_instance_controller =  require('../controllers/book_instance_controller');
+const author_controller        =  require('../controllers/author_controller');
+const book_controller          =  require('../controllers/book_controller');
+const book_instance_controller =  require('../controllers/book_instance_controller');
+const genre_controller         =  require('../controllers/genre_controller');
 
 /**
 |--------------------------------------------------------------------------
