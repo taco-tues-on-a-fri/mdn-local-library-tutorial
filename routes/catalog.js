@@ -6,7 +6,11 @@ var author_controller        =  require('../controllers/author_controller');
 var genre_controller         =  require('../controllers/genre_controller');
 var book_instance_controller =  require('../controllers/book_instance_controller');
 
-/// BOOK ROUTES ///
+/**
+|--------------------------------------------------------------------------
+| Book routes
+|--------------------------------------------------------------------------
+*/
 
 // GET catalog home page.
 router.get('/', book_controller.index);
@@ -35,7 +39,13 @@ router.get('/book/:id', book_controller.book_detail);
 //GET request for list of all book items.
 router.get('/books', book_controller.book_list);
 
-/// AUTHOR ROUTES ///
+
+
+/**
+|--------------------------------------------------------------------------
+| Author routes
+|--------------------------------------------------------------------------
+*/
 
 // GET request for creating author. NOTE this must come before route for id (i.e display author).
 router.get('/author/create', author_controller.author_create_get);
@@ -61,7 +71,13 @@ router.get('/author/:id', author_controller.author_detail);
 // GET request for list of all authors.
 router.get('/authors', author_controller.author_list);
 
-/// GENRE ROUTES ///
+
+
+/**
+|--------------------------------------------------------------------------
+| Genre routes
+|--------------------------------------------------------------------------
+*/
 
 // GET request for creating a genre. NOTE this must come before route that displays genre (uses id)
 router.get('/genre/create', genre_controller.genre_create_get);
@@ -87,7 +103,13 @@ router.get('/genre/:id', genre_controller.genre_detail);
 // GET request for list of genres/
 router.get('/genres', genre_controller.genre_list);
 
-/// BOOKINSTANCE ROUTES ///
+
+
+/**
+|--------------------------------------------------------------------------
+| Book instance routes
+|--------------------------------------------------------------------------
+*/
 
 // GET request for creating a BookInstance. NOTE This must come before route that displays bookinstance (uses id)
 router.get('/bookinstance/create', book_instance_controller.bookinstance_create_get);
