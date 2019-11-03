@@ -1,9 +1,9 @@
-var mongoose =  require('mongoose');
-var moment   =  require('moment');
+const mongoose =  require('mongoose');
+const moment   =  require('moment');
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var AuthorSchema = new Schema(
+const AuthorSchema = new Schema(
   {
     first_name    :  {type: String, required: true, max: 100},
     family_name   :  {type: String, required: true, max: 100},
@@ -23,7 +23,15 @@ AuthorSchema
 AuthorSchema
 .virtual('lifespan')
 .get(function () {
-  return (this.date_of_death.getYear() - this.date_of_birth.getYear()).toString();
+  var lifetime_string='';
+  if (this.date_of_birth) {
+      lifetime_string=moment(this.date_of_birth).format('MMMM Do, YYYY');
+      }
+  lifetime_string+=' - ';
+  if (this.date_of_death) {
+      lifetime_string+=moment(this.date_of_death).format('MMMM Do, YYYY');
+      }
+  return lifetime_string
 });
 
 // Virtual for author's formatted birth date
