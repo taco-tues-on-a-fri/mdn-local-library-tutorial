@@ -130,7 +130,7 @@ app.use(compression());
 |--------------------------------------------------------------------------
 */
 
-app.use(morgan('combined', { stream: winston.stream }));           // broke morgan once
+app.use(morgan('dev', { stream: winston.stream }));           // broke morgan once
 // app.use(morgan('combined', { "stream": winston.stream.write})); // fixed problem once
 
 
